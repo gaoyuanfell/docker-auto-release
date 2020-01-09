@@ -1,0 +1,12 @@
+version: '0.0.1'
+    services:
+        nginx:
+            restart: always
+            image: nginx
+            ports: 
+                - 3001:3000
+            volumes: 
+                - ./nginx:/etc/nginx
+                - ./nginx/conf.d:/etc/nginx/conf.d
+                - ./nginx/log:/var/log/nginx
+                - /opt/www:/opt/www

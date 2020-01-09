@@ -265,6 +265,10 @@ EXPOSE 80
 CMD ["nginx"]
 ```
 
-## 从零搭建 docker+jenkins+node.js 自动化部署环境的方法
+## Docker Compose
 
-### [网站地址](https://www.jb51.net/article/155499.htm)
+## Docker 常用命令
+
+- `docker image prune` 清除 `<none>:<none>` 镜像
+- `docker exec -it containerID /bin/bash` 进入容器交互 containerID:镜像 ID
+- `ctrl + d` 退出当前容器
