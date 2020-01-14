@@ -265,6 +265,10 @@ EXPOSE 80
 CMD ["nginx"]
 ```
 
+## Luinx 相关问题
+
+- 解决 user is not in the sudoers file. This incident will be reported 【修改文件/etc/sudoers】 在 root 下添加 xxx ALL=(ALL:ALL) ALL
+
 ## Docker Compose
 
 ## Docker 常用命令
@@ -272,3 +276,7 @@ CMD ["nginx"]
 - `docker image prune` 清除 `<none>:<none>` 镜像
 - `docker exec -it containerID /bin/bash` 进入容器交互 containerID:镜像 ID
 - `ctrl + d` 退出当前容器
+- docker rm `docker ps -a -q` 删除未执行的镜像
+- docker rmi `docker images -q` 删除所有镜像
+- `docker volume ls -qf dangling=true` 列出所有未使用的 volume
+- `docker volume rm $(docker volume ls -qf dangling=true)` 删除所有列出的 volume
