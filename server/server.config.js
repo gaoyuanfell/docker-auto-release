@@ -1,9 +1,9 @@
 module.exports = {
   apps: [
     {
-      name: 'main',
+      name: 'app',
       // 是否监听文件变动然后重启
-      watch: ['main.js', 'routers', 'app'],
+      watch: ['app.js', 'routers', 'app'],
       // 不用监听的文件
       // ignore_watch: ['node_modules', 'logs', 'public'],
       // 错误日志文件
@@ -17,7 +17,7 @@ module.exports = {
       max_restarts: 5,
       // 默认为true, 发生异常的情况下自动重启
       autorestart: true,
-      script: './main.js',
+      script: './bin/www',
       env: {
         NODE_ENV: 'development',
       },
@@ -27,3 +27,6 @@ module.exports = {
     },
   ],
 };
+
+
+

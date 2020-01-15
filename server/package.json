@@ -1,16 +1,20 @@
 {
   "name": "server",
-  "version": "1.0.0",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "pm2 start server.config.js"
+    "start": "pm2 start server.config.js",
+    "dev": "nodemon bin/www"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mongodb": "^3.4.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "mongodb": "^3.5.0",
+    "morgan": "~1.9.1",
     "redis": "^2.8.0"
   },
   "devDependencies": {
-    "pm2": "^4.2.1"
+    "nodemon": "^2.0.2"
   }
 }

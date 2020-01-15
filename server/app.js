@@ -1,0 +1,54 @@
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+
+/**
+ * 连接 redis
+ */
+const redis = require('redis');
+const RedisClient = redis.createClient(6379, '127.0.0.1', {});
+RedisClient.on('ready', () => {
+  console.log('------------redis初始化成功------------');
+});
+
+/**
+ * 连接 mongodb
+ */
+const MongoClient = require('mongodb').MongoClient;
+MongoClient.connect(
+  'mongodb://127.0.0.1/dockerApp',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err, db) => {
+    if (err) throw err;
+    console.log('------------mongodb初始化成功------------');
+  }
+);
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+
+const app = express();
+
+/**
+ * body-parser 中间件
+ */
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+module.exports = app;
