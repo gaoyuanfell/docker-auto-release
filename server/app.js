@@ -1,8 +1,11 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+
+const app = express();
 
 /**
  * 连接 redis
@@ -29,10 +32,32 @@ MongoClient.connect(
   }
 );
 
+/**
+ * 连接 mysql
+ */
+const MysqlClient = require('mysql');
+const mysqlConnection = MysqlClient.createConnection({
+  host: '127.0.0.1',
+  user: 'root',
+  password: 'mysqlroot',
+  port: '3306',
+  database: 'moka',
+  multipleStatements: true,
+});
+
+mysqlConnection.connect((err, result) => {
+  if (err) {
+    console.log('连接失败');
+    return;
+  }
+  console.log('连接成功');
+});
+
+// mysqlConnection.query(`drop database moka1`);
+// mysqlConnection.query(`create database moka default character set utf8 default collate utf8_general_ci;`);
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-
-const app = express();
 
 /**
  * body-parser 中间件
