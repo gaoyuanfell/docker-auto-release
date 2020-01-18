@@ -47,10 +47,10 @@ const mysqlConnection = MysqlClient.createConnection({
 
 mysqlConnection.connect((err, result) => {
   if (err) {
-    console.log('连接失败');
+    console.log('------------mysql初始化失败------------');
     return;
   }
-  console.log('连接成功');
+  console.log('------------mysql初始化成功------------');
 });
 
 // mysqlConnection.query(`drop database moka1`);
