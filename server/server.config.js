@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'app',
       // 是否监听文件变动然后重启
-      watch: ['app.js', 'routers', 'app'],
+      watch: ['app.js', 'routers'],
       // 不用监听的文件
       // ignore_watch: ['node_modules', 'logs', 'public'],
       // 错误日志文件

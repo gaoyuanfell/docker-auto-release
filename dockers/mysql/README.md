@@ -4,5 +4,3 @@
 docker-compose build && docker-compose up -d
 docker-compose stop && docker-compose rm
 docker image prune
-
-docker-compose stop && docker-compose rm && docker image prune && docker-compose build && docker-compose up -d

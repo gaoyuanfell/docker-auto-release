@@ -280,3 +280,4 @@ CMD ["nginx"]
 - docker rmi `docker images -q` 删除所有镜像
 - `docker volume ls -qf dangling=true` 列出所有未使用的 volume
 - `docker volume rm $(docker volume ls -qf dangling=true)` 删除所有列出的 volume
+- docker-compose stop && docker-compose rm && docker image prune && docker-compose build && docker-compose up -d
