@@ -1,12 +1,21 @@
 version: '3.1'
+networks:
+  api-server:
+    driver: bridge
 services:
   web-moka:
     build:
       context: ./
       dockerfile: ./Dockerfile
+    networks:
+      - api-server
     ports:
       - 3000:3000
-    external_links:
-      - mongo-moka:mongo-moka
-      - redis-moka:redis-moka
-      - mysql-moka:mysql-moka
+    # external_links:
+    #   - mongo-moka:mongo-moka
+    #   - redis-moka:redis-moka
+    #   - mysql-moka:mysql-moka
+    # links:
+    #   - mongo-moka:mongo-moka
+    # - redis-moka:redis-moka
+    #   - mysql-moka:mysql-moka

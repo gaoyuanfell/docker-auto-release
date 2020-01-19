@@ -1,4 +1,5 @@
 FROM node:latest
+ENV PORT 3000
 ENV NODE_ENV production
 RUN mkdir -p /home/www/express
 COPY . /home/www/express/

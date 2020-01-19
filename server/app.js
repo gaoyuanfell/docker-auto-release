@@ -7,13 +7,20 @@ const logger = require('morgan');
 
 const app = express();
 
+const development = process.env.NODE_ENV === 'development';
+
 /**
  * 连接 redis
  */
 const redis = require('redis');
-const RedisClient = redis.createClient(6379, '127.0.0.1', {});
+const RedisClient = redis.createClient({
+  host: development ? 'redis-moka' : 'localhost',
+  port: 6379,
+});
 RedisClient.on('ready', () => {
   console.log('------------redis初始化成功------------');
+}).on('error', () => {
+  console.log('------------redis初始化失败------------');
 });
 
 /**
@@ -21,7 +28,7 @@ RedisClient.on('ready', () => {
  */
 const MongoClient = require('mongodb').MongoClient;
 MongoClient.connect(
-  'mongodb://127.0.0.1/dockerApp',
+  development ? 'mongodb://mongo-moka/admin' : 'mongodb://localhost/admin',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -37,7 +44,7 @@ MongoClient.connect(
  */
 const MysqlClient = require('mysql');
 const mysqlConnection = MysqlClient.createConnection({
-  host: '127.0.0.1',
+  host: development ? 'mysql-moka' : 'localhost',
   user: 'root',
   password: 'mysqlroot',
   port: '3306',
@@ -52,9 +59,6 @@ mysqlConnection.connect((err, result) => {
   }
   console.log('------------mysql初始化成功------------');
 });
-
-// mysqlConnection.query(`drop database moka1`);
-// mysqlConnection.query(`create database moka default character set utf8 default collate utf8_general_ci;`);
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
