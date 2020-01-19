@@ -14,7 +14,7 @@ const development = process.env.NODE_ENV === 'development';
  */
 const redis = require('redis');
 const RedisClient = redis.createClient({
-  host: development ? 'redis-moka' : 'localhost',
+  host: development ? 'redis-moka' : 'localhost', // 线上采用匿名连接
   port: 6379,
 });
 RedisClient.on('ready', () => {
@@ -28,7 +28,7 @@ RedisClient.on('ready', () => {
  */
 const MongoClient = require('mongodb').MongoClient;
 MongoClient.connect(
-  development ? 'mongodb://mongo-moka/admin' : 'mongodb://localhost/admin',
+  development ? 'mongodb://mongo-moka/admin' : 'mongodb://localhost/admin', // 线上采用匿名连接
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -44,7 +44,7 @@ MongoClient.connect(
  */
 const MysqlClient = require('mysql');
 const mysqlConnection = MysqlClient.createConnection({
-  host: development ? 'mysql-moka' : 'localhost',
+  host: development ? 'mysql-moka' : 'localhost', // 线上采用匿名连接
   user: 'root',
   password: 'mysqlroot',
   port: '3306',
