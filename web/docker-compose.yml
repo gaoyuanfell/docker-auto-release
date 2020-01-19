@@ -1,0 +1,21 @@
+version: '3.1'
+networks:
+  web-moka:
+    driver: bridge
+services:
+  web-moka:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    networks:
+      - web-moka
+    ports:
+      - 80:80
+    # external_links:
+    #   - mongo-moka:mongo-moka
+    #   - redis-moka:redis-moka
+    #   - mysql-moka:mysql-moka
+    # links:
+    #   - mongo-moka:mongo-moka
+    # - redis-moka:redis-moka
+    #   - mysql-moka:mysql-moka
