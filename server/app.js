@@ -4,61 +4,14 @@ const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+const cors = require('cors');
 
 const app = express();
 
-const development = process.env.NODE_ENV === 'development';
-
-/**
- * 连接 redis
- */
-const redis = require('redis');
-const RedisClient = redis.createClient({
-  host: development ? 'redis-moka' : 'localhost', // 线上采用匿名连接
-  port: 6379,
-});
-RedisClient.on('ready', () => {
-  console.log('------------redis初始化成功------------');
-}).on('error', () => {
-  console.log('------------redis初始化失败------------');
-});
-
-/**
- * 连接 mongodb
- */
-const MongoClient = require('mongodb').MongoClient;
-MongoClient.connect(
-  development ? 'mongodb://mongo-moka/admin' : 'mongodb://localhost/admin', // 线上采用匿名连接
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  (err, db) => {
-    if (err) throw err;
-    console.log('------------mongodb初始化成功------------');
-  }
-);
-
-/**
- * 连接 mysql
- */
-const MysqlClient = require('mysql');
-const mysqlConnection = MysqlClient.createConnection({
-  host: development ? 'mysql-moka' : 'localhost', // 线上采用匿名连接
-  user: 'root',
-  password: 'mysqlroot',
-  port: '3306',
-  database: 'moka',
-  multipleStatements: true,
-});
-
-mysqlConnection.connect((err, result) => {
-  if (err) {
-    console.log('------------mysql初始化失败------------');
-    return;
-  }
-  console.log('------------mysql初始化成功------------');
-});
+// const development = process.env.NODE_ENV === 'development';
+// const mongodb = require('./dbdata/mongodb');
+// const redis = require('./dbdata/redis');
+// const mysql = require('./dbdata/mysql');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -70,6 +23,9 @@ const usersRouter = require('./routes/users');
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
+
+// 解决跨域
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
