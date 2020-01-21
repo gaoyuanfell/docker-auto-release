@@ -1,39 +1,43 @@
-const express = require('express');
-const path = require('path');
-const fs = require('fs');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const logger = require('morgan');
-const cors = require('cors');
-
-const app = express();
-
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const path_1 = __importDefault(require("path"));
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const body_parser_1 = __importDefault(require("body-parser"));
+const morgan_1 = __importDefault(require("morgan"));
+const cors_1 = __importDefault(require("cors"));
+// const express = require('express');
+// const path = require('path');
+// const cookieParser = require('cookie-parser');
+// const bodyParser = require('body-parser');
+// const logger = require('morgan');
+// const cors = require('cors');
+const app = express_1.default();
 // const development = process.env.NODE_ENV === 'development';
 // const mongodb = require('./dbdata/mongodb');
 // const redis = require('./dbdata/redis');
 // const mysql = require('./dbdata/mysql');
-
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-
+const index_1 = __importDefault(require("./routes/index"));
+const users_1 = __importDefault(require("./routes/users"));
+// const indexRouter = require('./routes/index');
+// const usersRouter = require('./routes/users');
 /**
  * body-parser 中间件
  */
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(body_parser_1.default.urlencoded({ extended: false }));
 // parse application/json
-app.use(bodyParser.json());
-
+app.use(body_parser_1.default.json());
 // 解决跨域
-app.use(cors());
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-module.exports = app;
+app.use(cors_1.default());
+app.use(morgan_1.default('dev'));
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: false }));
+app.use(cookie_parser_1.default());
+app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
+app.use('/', index_1.default);
+app.use('/users', users_1.default);
+exports.default = app;
