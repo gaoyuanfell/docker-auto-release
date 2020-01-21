@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "ts-node bin/www.ts",
-    "dev": "nodemon --watch ./ -e ts --exec npm run start",
+    "start": "tsc && pm2 start server.config.js --env production",
+    "dev:start": "ts-node bin/www.ts",
+    "dev": "nodemon --watch ./ -e ts --exec npm run dev:start",
     "build": "tsc"
   },
   "dependencies": {

@@ -2,7 +2,7 @@
  * 连接 mysql
  */
 
-import * as MysqlClient from 'mysql';
+import MysqlClient from 'mysql';
 import config from './config';
 
 const mysql = MysqlClient.createPool(config.mysql);

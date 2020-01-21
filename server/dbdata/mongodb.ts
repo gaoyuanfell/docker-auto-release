@@ -2,7 +2,7 @@
  * 连接 mongodb
  */
 
-import * as mongodbClient from 'mongodb';
+import mongodbClient from 'mongodb';
 
 const mongodb = mongodbClient.MongoClient;
 

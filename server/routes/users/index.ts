@@ -1,9 +1,8 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import * as express from 'express';
-const router = express.Router();
-
+import fs from 'fs';
+import path from 'path';
+import express from 'express';
 import mysqlPool from '../../dbdata/mysql';
+const router = express.Router();
 
 const queryStr = fs.readFileSync(path.join(__dirname, 'insert.sql'));
 

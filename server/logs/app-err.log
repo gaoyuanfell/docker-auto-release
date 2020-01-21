@@ -1,0 +1,66 @@
+TypeError: Cannot read property 'query' of undefined
+    at c:\Users\moka\Documents\work\docker-auto-release\server\routes\users\index.js:14:20
+    at Handshake.onConnect (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Pool.js:58:9)
+    at Handshake.<anonymous> (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:525:10)
+    at Handshake._callback (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:491:16)
+    at Handshake.Sequence.end (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Protocol.handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\Protocol.js:369:14)
+    at PoolConnection.Connection._handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:421:18)
+    at Socket.emit (events.js:210:5)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+TypeError: Cannot read property 'query' of undefined
+    at c:\Users\moka\Documents\work\docker-auto-release\server\routes\users\index.js:14:20
+    at Handshake.onConnect (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Pool.js:58:9)
+    at Handshake.<anonymous> (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:525:10)
+    at Handshake._callback (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:491:16)
+    at Handshake.Sequence.end (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Protocol.handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\Protocol.js:369:14)
+    at PoolConnection.Connection._handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:421:18)
+    at Socket.emit (events.js:210:5)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+TypeError: Cannot read property 'query' of undefined
+    at c:\Users\moka\Documents\work\docker-auto-release\server\routes\users\index.js:14:20
+    at Handshake.onConnect (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Pool.js:58:9)
+    at Handshake.<anonymous> (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:525:10)
+    at Handshake._callback (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:491:16)
+    at Handshake.Sequence.end (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Protocol.handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\Protocol.js:369:14)
+    at PoolConnection.Connection._handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:421:18)
+    at Socket.emit (events.js:210:5)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+TypeError: Cannot read property 'query' of undefined
+    at c:\Users\moka\Documents\work\docker-auto-release\server\routes\users\index.js:14:20
+    at Handshake.onConnect (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Pool.js:58:9)
+    at Handshake.<anonymous> (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:525:10)
+    at Handshake._callback (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:491:16)
+    at Handshake.Sequence.end (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Protocol.handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\Protocol.js:369:14)
+    at PoolConnection.Connection._handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:421:18)
+    at Socket.emit (events.js:210:5)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+TypeError: Cannot read property 'query' of undefined
+    at c:\Users\moka\Documents\work\docker-auto-release\server\routes\users\index.js:14:20
+    at Handshake.onConnect (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Pool.js:58:9)
+    at Handshake.<anonymous> (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:525:10)
+    at Handshake._callback (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:491:16)
+    at Handshake.Sequence.end (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Protocol.handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\Protocol.js:369:14)
+    at PoolConnection.Connection._handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:421:18)
+    at Socket.emit (events.js:210:5)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+TypeError: Cannot read property 'query' of undefined
+    at c:\Users\moka\Documents\work\docker-auto-release\server\routes\users\index.js:14:20
+    at Handshake.onConnect (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Pool.js:58:9)
+    at Handshake.<anonymous> (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:525:10)
+    at Handshake._callback (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:491:16)
+    at Handshake.Sequence.end (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Protocol.handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\protocol\Protocol.js:369:14)
+    at PoolConnection.Connection._handleNetworkError (c:\Users\moka\Documents\work\docker-auto-release\server\node_modules\mysql\lib\Connection.js:421:18)
+    at Socket.emit (events.js:210:5)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)

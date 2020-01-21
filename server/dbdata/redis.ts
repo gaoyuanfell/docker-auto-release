@@ -1,7 +1,7 @@
 /**
  * 连接 redis
  */
-import * as redisClient from 'redis';
+import redisClient from 'redis';
 import config from './config';
 const redis = redisClient.createClient(config.redis);
 

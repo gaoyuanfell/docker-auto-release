@@ -1,21 +1,14 @@
 "use strict";
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs = __importStar(require("fs"));
-const path = __importStar(require("path"));
-const express = __importStar(require("express"));
-const router = express.Router();
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
+const express_1 = __importDefault(require("express"));
 const mysql_1 = __importDefault(require("../../dbdata/mysql"));
-const queryStr = fs.readFileSync(path.join(__dirname, 'insert.sql'));
+const router = express_1.default.Router();
+const queryStr = fs_1.default.readFileSync(path_1.default.join(__dirname, 'insert.sql'));
 router.get('/', (req, res, next) => {
     mysql_1.default.getConnection((err, connection) => {
         connection.query(queryStr.toString(), (err, rows) => {

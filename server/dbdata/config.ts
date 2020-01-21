@@ -1,10 +1,10 @@
 import { PoolConfig } from 'mysql';
-
-const development = process.env.NODE_ENV === 'development';
+console.info(process.env.NODE_ENV);
+const production = process.env.NODE_ENV === 'production';
 
 export default {
   mysql: {
-    host: development ? 'mysql-moka' : 'localhost', // 线上采用匿名连接
+    host: production ? 'mysql-moka' : 'localhost', // 线上采用匿名连接
     user: 'root',
     password: 'mysqlroot',
     port: '3306',
@@ -13,11 +13,11 @@ export default {
     connectionLimit: 10,
   } as any,
   redis: {
-    host: development ? 'redis-moka' : 'localhost', // 线上采用匿名连接
+    host: production ? 'redis-moka' : 'localhost', // 线上采用匿名连接
     port: 6379,
   },
   mongodb: [
-    development ? 'mongodb://mongo-moka/admin' : 'mongodb://localhost/admin',
+    production ? 'mongodb://mongo-moka/admin' : 'mongodb://localhost/admin',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

@@ -2,20 +2,13 @@
 /**
  * 连接 mysql
  */
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MysqlClient = __importStar(require("mysql"));
+const mysql_1 = __importDefault(require("mysql"));
 const config_1 = __importDefault(require("./config"));
-const mysql = MysqlClient.createPool(config_1.default.mysql);
+const mysql = mysql_1.default.createPool(config_1.default.mysql);
 mysql.on('acquire', connection => {
     console.info('Connection %d acquired', connection.threadId);
 });

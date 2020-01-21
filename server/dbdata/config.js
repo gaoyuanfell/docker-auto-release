@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const development = process.env.NODE_ENV === 'development';
+console.info(process.env.NODE_ENV);
+const development = false; //process.env.NODE_ENV === 'development';
 exports.default = {
     mysql: {
         host: development ? 'mysql-moka' : 'localhost',

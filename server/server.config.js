@@ -6,11 +6,11 @@ module.exports = {
       // 解释器参数 -P 表示项目路径，会自动使用项目的 tsconfig.json
       // interpreter_args: '-P ./ -r tsconfig-paths/register',
       name: 'app',
-      cwd: './build',
+      // cwd: './',
       // 是否监听文件变动然后重启
       // watch: ['app.js', 'routers'],
       watch: false,
-      ignore_watch: ['node_modules'],
+      // ignore_watch: ['node_modules'],
       // 不用监听的文件
       // ignore_watch: ['node_modules', 'logs', 'public'],
       // 错误日志文件
@@ -24,7 +24,7 @@ module.exports = {
       max_restarts: 5,
       // 默认为true, 发生异常的情况下自动重启
       autorestart: true,
-      script: './bin/www',
+      script: './bin/www.js',
       env: {
         NODE_ENV: 'development',
       },
