@@ -24,4 +24,4 @@ yarn-error.log*
 
 **/yarn.lock
 server/**/*.js
-server/**.js
+server/server.config.js

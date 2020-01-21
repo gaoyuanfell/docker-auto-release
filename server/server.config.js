@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      // 指定解释器
+      // 指定解释器 11111111111
       // interpreter: './node_modules/.bin/ts-node',
       // 解释器参数 -P 表示项目路径，会自动使用项目的 tsconfig.json
       // interpreter_args: '-P ./ -r tsconfig-paths/register',
