@@ -1,3 +1,3 @@
 select
   *
-from t_role;
+from t_mailed;

@@ -24,4 +24,7 @@ yarn-error.log*
 
 **/yarn.lock
 
+
+# 忽略编译后的js文件
 server/**/*.js
+!server/server.config.js
