@@ -8,6 +8,10 @@ const queryStr = fs.readFileSync(path.join(__dirname, 'insert.sql'));
 
 router.get('/', (req, res, next) => {
   mysqlPool.getConnection((err, connection) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
     connection.query(queryStr.toString(), (err, rows) => {
       res.json(rows);
     });

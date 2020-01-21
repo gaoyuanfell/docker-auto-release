@@ -1,6 +1,4 @@
-import { PoolConfig } from 'mysql';
-console.info(process.env.NODE_ENV);
-const production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === 'production'; // process.env.NODE_ENV === 'production';
 
 export default {
   mysql: {
