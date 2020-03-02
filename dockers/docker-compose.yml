@@ -12,8 +12,9 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - 'mongo-db:/data/db'
-      - 'mongo-configdb:/data/configdb'
+      - './mongodb/db:/data/db'
+      - './mongodb/configdb:/data/configdb'
+      - './mongodb/log:/data/log'
 
   redis-moka:
     build: redis
@@ -24,7 +25,7 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - 'redis-data:/data'
+      - './redis/data:/data'
 
   mysql-moka:
     build: mysql
@@ -35,12 +36,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: mysqlroot
     volumes:
-      - 'mysql-data:/var/lib/mysql'
+      - './mysql/data:/var/lib/mysql'
     ports:
       - '3306:3306'
-
-volumes:
-  mongo-db:
-  mongo-configdb:
-  redis-data:
-  mysql-data:
+# volumes:
+# mongo-db:
+# mongo-configdb:
+# redis-data:
+# mysql-data:

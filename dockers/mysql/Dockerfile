@@ -40,3 +40,5 @@ RUN chmod a+x $AUTO_RUN_DIR/$CREATE_DATA_SHELL
 # CMD ["mysqld"]
 
 # ENTRYPOINT ["/mysql/setup.sh"]
+
+VOLUME ["/var/lib/mysql"]
