@@ -12,12 +12,6 @@ const app = express();
 // const redis = require('./dbdata/redis');
 // const mysql = require('./dbdata/mysql');
 
-import indexRouter from './routes/index';
-import usersRouter from './routes/users';
-
-// const indexRouter = require('./routes/index');
-// const usersRouter = require('./routes/users');
-
 /**
  * body-parser 中间件
  */
@@ -34,6 +28,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+import indexRouter from './routes/index';
+import usersRouter from './routes/users';
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
